@@ -4,14 +4,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta http-equiv="refresh" content="0;url=https://webview.shonenjump.com/special/2026/hunter_stage4_1013/">
   <title>hunterhunter2026</title>
-  <script>
-    window.location.replace('https://webview.shonenjump.com/special/2026/hunter_stage4_1013/');
-  </script>
+  <style>body{font:16px/1.7 system-ui,sans-serif;max-width:680px;margin:12vh auto;padding:24px;color:#182c25}a{color:#126c4d}#manual{padding:16px;background:#f1f6f3;border-radius:10px}</style>
 </head>
 <body>
-  <p>チケット受付へ移動しています。</p>
-  <p>自動で移動しない場合は、<a href="https://webview.shonenjump.com/special/2026/hunter_stage4_1013/">こちらを開いてください</a>。</p>
+  <h1>hunterhunter2026</h1>
+  <p id="status">チケット受付へ移動しています。</p>
+  <div id="manual">
+    <p><a href="https://webview.shonenjump.com/special/2026/hunter_stage4_1013/">受付を手動で開く</a></p>
+    <p><a href="./hunterhunter2026.user.js">自動申込用Userscriptを開く</a></p>
+  </div>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.hash.slice(1));
+      if (params.has('row')) {
+        document.getElementById('status').textContent = 'No.' + params.get('row') + ' の申込準備をしています。自動処理が始まらない場合は、HUNTER×HUNTER用Userscriptを有効にしてください。';
+        // UserscriptがGAS取得と保存を完了するまで、ここに留まります。
+        // 行指定・資格情報を別サイトのURLに付けて渡しません。
+      } else {
+        window.location.replace('https://webview.shonenjump.com/special/2026/hunter_stage4_1013/');
+      }
+    })();
+  </script>
 </body>
 </html>
